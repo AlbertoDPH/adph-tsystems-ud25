@@ -28,7 +28,7 @@ public class FabricanteController {
 	}
 
 	@PostMapping("/fabricantes")
-	public Fabricantes salvarFabricante(@RequestBody Fabricantes fabricante) {
+	public Fabricantes salvarFabricantes(@RequestBody Fabricantes fabricante) {
 		return fabricanteServiceImpl.guardarFabricante(fabricante);
 	}
 
@@ -39,13 +39,13 @@ public class FabricanteController {
 
 		fabricante_xid = fabricanteServiceImpl.fabricanteXID(id);
 
-		System.out.println("Fabricante XID: " + fabricante_xid);
+		System.out.println("Fabricantes XID: " + fabricante_xid);
 
 		return fabricante_xid;
 	}
 	
 	@PutMapping("/fabricantes/{cod_fabricante}")
-	public Fabricantes actualizarFabricante(@PathVariable(name="cod_fabricante")Integer id,@RequestBody Fabricantes fabricante) {
+	public Fabricantes actualizarFabricantes(@PathVariable(name="cod_fabricante")Integer id,@RequestBody Fabricantes fabricante) {
 		
 		Fabricantes fabricante_seleccionado= new Fabricantes();
 		Fabricantes fabricante_actualizado= new Fabricantes();
@@ -62,7 +62,7 @@ public class FabricanteController {
 	}
 	
 	@DeleteMapping("/fabricantes/{cod_fabricante}")
-	public void eliminarFabricante(@PathVariable(name="cod_fabricante")Integer id) {
+	public void eliminarFabricantes(@PathVariable(name="cod_fabricante")Integer id) {
 		fabricanteServiceImpl.eliminarFabricante(id);
 	}
 
